@@ -13,7 +13,7 @@ JavaScript, we can do with TypeScript too.
 ```ts
 let x: number = 10;
 
-// Compile error
+// Compile error: Type 'string' is not assignable to type 'number'
 x = "a";
 ```
 
@@ -35,3 +35,17 @@ x = "a";
 ## Setting Up the Development Environment
 - Install NodeJS (along with npm): `brew install node@18`
 - Install typescript: `npm install -g typescript`
+
+## Compile
+
+```shell
+❯ tsc -v
+Version 5.0.4
+
+❯ ls
+index.ts
+
+❯ tsc index.ts
+❯ ls
+index.js index.ts 
+```
