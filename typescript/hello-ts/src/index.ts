@@ -1,2 +1,5 @@
 let age: number = 20;
-console.log('Hello world');
+if (age < 50) {
+    age += 10;
+}
+console.log('Hello ' + age);

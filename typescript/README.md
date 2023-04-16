@@ -77,3 +77,9 @@ Example:
 ```
 
 With `tsconfig.json`, we no longer need to specify, e.g. ts files, but simply run: `tsc`.
+
+## Debugging
+- Enable `"sourceMap": true` in `tsconfig.json`, which Create source map files for
+  emitted JavaScript files.
+- On VSCode, in Run and Debug tab, click Create `launch.json` for Node.js.
+- Add `preLaunchTask` to `launch.json`.
