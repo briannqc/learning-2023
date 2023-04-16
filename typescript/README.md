@@ -47,5 +47,33 @@ index.ts
 
 ❯ tsc index.ts
 ❯ ls
-index.js index.ts 
+index.js index.ts
+
+❯ cat index.js
+var age = 20;
+console.log('Hello world');
 ```
+
+By default, TSC compiles ts codes into ES5 codes. Hence, 'var' is used in place of 'let'.
+We can configure TS, starting with creating `tsconfig.json` file: `tsc --init`.
+
+Example:
+```json
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "es2016", /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+
+    /* Modules */
+    "module": "commonjs", /* Specify what module code is generated. */
+    "rootDir": "./src", /* Specify the root folder within your source files. */
+
+    /* Emit */
+    "outDir": "./dist", /* Specify an output folder for all emitted files. */
+    "removeComments": true, /* Disable emitting comments. */
+    "noEmitOnError": true, /* Disable emitting files if any type checking errors are reported. */
+  }
+}
+```
+
+With `tsconfig.json`, we no longer need to specify, e.g. ts files, but simply run: `tsc`.
