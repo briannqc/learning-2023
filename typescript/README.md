@@ -179,3 +179,36 @@ Best practice: Limit the size of tuples to 2, use them as a short-hand for, e.g.
 let user: [number, string] = [0, 'Brian']; // GOOD
 let user: [number, string, string, string] = [0, 'Brian', 'Singapore', 'Vietnamese']; // NOT GOOD
 ```
+
+### Enums
+
+```ts
+enum Size {
+  Small,
+  Medium,
+  Large
+};
+let mySize: Size = Size.Medium;
+
+// By default, TS use number, starting from 0 for enum.
+// The above enum is equivalent to:
+enum Size {
+  Small = 0,
+  Medium,
+  Large
+};
+
+// If we find a need to customize enum underlying type, do this:
+// In this case, we need to assign values to every enum element.
+// However, it is questionable
+enum Size {
+  Small = 'S',
+  Medium = 'M',
+  Large = 'L'
+};
+
+// Using const keyword will make the compiler generate
+// more optimized JS code
+const enum Size = {Small, Medium, Large};
+let mySize: Size = Size.Medium;
+```
