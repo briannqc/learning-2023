@@ -261,3 +261,62 @@ function calculateTax(income: number, taxYear = 2022): number {
 calculateTax(10_000); // taxYear = '2022'
 calculateTax(10_000, 2023); // taxYear = '2023'
 ```
+
+### Objects
+
+```ts
+let employee = {
+  id: 1
+};
+
+// TS automatically infer the "shape" of the object by its values,
+// hence, the employee object above is equivalent to:
+let employee: {
+  id: number
+} = {
+  id: 1
+}
+
+employee.name = 'Brian'; // Compile error as employee doesn't have name property
+```
+
+#### Optional properties
+
+```ts
+let employee: {
+  id: 1,
+  passportNumber?: string // Not everyone has a passport
+} = {
+  id: 1
+};
+
+employee.passport = "A123456";
+```
+
+#### Readonly
+
+```ts
+let employee: {
+  readonly id: 1,
+} = {
+  id: 1
+};
+
+employee.id = 0; // Compile error
+```
+
+#### Methods
+
+```ts
+let employee: {
+  readonly id: 1,
+  name: string,
+  retire: (date: Date) => void  // Define the signature of the method
+} = {
+  id: 1,
+  name: 'Brian',
+  retire: (date: Date) => { // Implement the method
+    // Do something
+  }
+};
+```
