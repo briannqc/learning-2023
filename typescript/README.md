@@ -88,6 +88,7 @@ With `tsconfig.json`, we no longer need to specify, e.g. ts files, but simply ru
 
 ## Fundamentals
 
+In this section:
 - The any Type
 - Arrays
 - Tuples
@@ -313,6 +314,34 @@ let employee: {
   name: string,
   retire: (date: Date) => void  // Define the signature of the method
 } = {
+  id: 1,
+  name: 'Brian',
+  retire: (date: Date) => { // Implement the method
+    // Do something
+  }
+};
+```
+
+## Advanced Types
+
+In this section:
+- Type aliases
+- Unions and intersections
+- Type narrowing
+- Nullable types
+- The unknown type
+- The never type
+
+### Type aliases
+
+```ts
+type Employee = {
+  readonly id: 1,
+  name: string,
+  retire: (date: Date) => void  // Define the signature of the method
+}
+
+let employee: Employee = {
   id: 1,
   name: 'Brian',
   retire: (date: Date) => { // Implement the method
