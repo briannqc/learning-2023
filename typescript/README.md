@@ -500,3 +500,13 @@ customer = customers?.[0]
 // call fun(123) if fun is a function else do nothing
 fun?.(123)
 ```
+
+### Non-null Assertion Operator
+
+```ts
+// Only use ! when you know that the value can’t be null or undefined.
+function liveDangerously(x?: number | null) {
+  // No error
+  console.log(x!.toFixed());
+}
+```
