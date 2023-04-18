@@ -2,7 +2,9 @@
 
 Source: https://www.youtube.com/watch?v=d56mG7DezGs&t=757s
 
-## TypeScript is statically-typed
+## Introduction
+
+### TypeScript is statically-typed
 
 TypeScript and JavaScript are brother and sister. While JavaScript is dyncmically-typed,
 TypeScript is statically-typed. TypeScript is more disciplined. Everything we can do with
@@ -36,7 +38,7 @@ x = "a";
 - Install NodeJS (along with npm): `brew install node@18`
 - Install typescript: `npm install -g typescript`
 
-## Compile
+### Compile
 
 ```shell
 ❯ tsc -v
@@ -78,8 +80,66 @@ Example:
 
 With `tsconfig.json`, we no longer need to specify, e.g. ts files, but simply run: `tsc`.
 
-## Debugging
+### Debugging
 - Enable `"sourceMap": true` in `tsconfig.json`, which Create source map files for
   emitted JavaScript files.
 - On VSCode, in Run and Debug tab, click Create `launch.json` for Node.js.
 - Add `preLaunchTask` to `launch.json`.
+
+## Fundamentals
+
+- The any Type
+- Arrays
+- Tuples
+- Enums
+- Functions
+- Objects
+
+### Built-in Types
+
+![Built-in Types](docs/ts-built-in-types.png)
+
+```ts
+let sales: number = 123_456;
+let course: string = 'TypeScript';
+let is_published: boolean = true;
+```
+
+#### Type Inferrence
+
+TS can infer type via its value, e.g.
+
+```ts
+let age = 30;
+
+// Is equivalent to:
+let age: number = 30;
+```
+
+### Any type
+
+```ts
+// Variable with no decoration nor initial values
+// has type of 'any'
+let level; 
+
+// Hence, we can assign any values into it.
+// For that reason, any type should be avoided whenever it's possible.
+// Otherwise, it defeats the whole idea of TS.
+level = 5;
+level = 'HARD';
+```
+
+We can turn off `noImplicitAny` in tsconfig.json, however, it's not recommended.
+
+```ts
+// DON'T
+function render(doc) {
+  // Do something
+}
+
+// DO this instead
+function render(doc: any) {
+  // Do something
+}
+```
