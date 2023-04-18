@@ -377,6 +377,17 @@ interface Bear extends Animal {
 }
 ```
 
+### Type Assertions
+
+TypeScript only allows type assertions which convert to a more specific or less specific version of a type.
+
+```ts
+const myCanvas = document.getElementById("main_canvas") as HTMLCanvasElement;
+
+// Or
+const myCanvas = <HTMLCanvasElement>document.getElementById("main_canvas");
+```
+
 ### Union Types
 
 Union type is not a part of generated JS code, it's purely here to help
