@@ -350,6 +350,33 @@ let employee: Employee = {
 };
 ```
 
+
+### Interfaces
+
+```ts
+interface Point {
+  x: number;
+  y: number;
+}
+
+function printCoord(pt: Point) {
+  console.log("The coordinate's x value is " + pt.x);
+  console.log("The coordinate's y value is " + pt.y);
+}
+ 
+printCoord({ x: 100, y: 100 });
+
+// While type cannot be re-opened to add new properties
+// interface is always extendable
+interface Animal {
+  name: string
+}
+
+interface Bear extends Animal {
+  honey: boolean
+}
+```
+
 ### Union Types
 
 Union type is not a part of generated JS code, it's purely here to help
