@@ -349,3 +349,29 @@ let employee: Employee = {
   }
 };
 ```
+
+### Union Types
+
+Union type is not a part of generated JS code, it's purely here to help
+compiler with type checking.
+
+```ts
+function cmToInch(length: number | string): number {
+  // At this, we can only call common methods of number and string
+  length.aCommonMethod();
+
+  // Narrowing
+  if (typeof length === 'number') {
+    // Here we can call all methods of number
+    length.aSpecificMethodOfNumber();
+    return length/2.54;
+  } else {
+    /// Here we can call all methods of string
+    length.aSpecificMethodOfString();
+    return parseInt(length)/2.54;
+  }
+}
+
+cmToInch(100); // OK
+cmToInch('100'); // OK too
+```
