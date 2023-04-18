@@ -119,7 +119,7 @@ let age: number = 30;
 ### Any type
 
 ```ts
-// Variable with no decoration nor initial values
+// Variable with no type annotation nor initial values
 // has type of 'any'
 let level; 
 
@@ -142,4 +142,25 @@ function render(doc) {
 function render(doc: any) {
   // Do something
 }
+```
+
+### Arrays
+
+```ts
+let numbers: number[] = [1, 2, 3];
+
+// TS can also infer type of array from its elements' types
+// numbers has type of number[]
+let numbers = [1, 2, 3]
+
+// Empty array without annotation is any[]
+// => Should be avoided
+let numbers = [];
+numbers[0] = 1;
+numbers[1] = 'Two';
+
+// Annotate it with type instead
+let numbers: number[] = []
+numbers[0] = 1;  // OK
+numbers[1] = 'Two'; // Compile error
 ```
