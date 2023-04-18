@@ -375,3 +375,23 @@ function cmToInch(length: number | string): number {
 cmToInch(100); // OK
 cmToInch('100'); // OK too
 ```
+
+### Intersection types
+
+```ts
+type Draggable = {
+  drag: () => void
+}
+
+type Resizable = {
+  resize: () => void
+}
+
+type UIWidget = Draggable & Resizable;
+
+let textBox: UIWidget = {
+  drag: () => {},
+  resize: () => {}
+}
+```
+
