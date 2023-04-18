@@ -212,3 +212,52 @@ enum Size {
 const enum Size = {Small, Medium, Large};
 let mySize: Size = Size.Medium;
 ```
+
+### Functions
+
+```ts
+function calculateTax(income: number): number {
+  if (income < 50_000) {
+    return income * 1.2;
+  }
+  return income * 1.3;
+}
+```
+
+Even though, TS can infer returned type of the function from its
+returned values, We should always annotate functions with returned types.
+
+```ts
+// DON'T
+function calculateTax(income: number) {
+  return 1.0;
+}
+
+// DO
+function calculateTax(income: number): number {
+  return 1.0;
+}
+```
+
+We should enable these config in tsconfig.json:
+- noUnusedParameters: true
+- noImplicitReturns: true
+- noUnusedLocals: true
+
+#### Optional params
+
+```ts
+// Without default values, absent params have 'undefined' values
+function calculateTax(income: number, taxYear?: number): number {
+  // ...
+}
+calculateTax(10_000); // taxYear = 'undefined'
+calculateTax(10_000, 2023); // taxYear = '2023'
+
+// With default values
+function calculateTax(income: number, taxYear = 2022): number {
+  // ...
+}
+calculateTax(10_000); // taxYear = '2022'
+calculateTax(10_000, 2023); // taxYear = '2023'
+```
