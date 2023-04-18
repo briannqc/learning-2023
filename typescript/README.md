@@ -430,3 +430,35 @@ function greet(name: string | null | undefined) {
 greet(null); // It works
 greet(undefined); // It works too
 ```
+
+### Optional Chaining
+
+```ts
+type Customer = {
+  birthday: Date
+}
+
+function getCustomer(id: number): Customer | null | undefined {
+  return id === 0 : null : { birthday: new Date() };
+}
+
+let customer = getCustomer(0);
+console.log(customer.birthday); // Compile error: Object is possibly 'null'
+
+// We can check customer type before accessing its property
+if (customer !== null && customer != undefined) {
+  console.log(customer.birthday);
+}
+
+// Or, it's better to use optional property access operator
+// customer?.bithday -> bithday IF customer is not null nor undefined ELSE undefined
+console.log(customer?.bithday)
+
+// Optional element access operator
+// customer = customers[0] IF customers is an array ELSE undefined 
+customer = customers?.[0]
+
+// Optional call
+// call fun(123) if fun is a function else do nothing
+fun?.(123)
+```
