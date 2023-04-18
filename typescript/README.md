@@ -404,3 +404,29 @@ let quantity: Quantity = 100;
 type Metric = 'cm' | 'inch';
 let metric: Metric = 'cm';
 ```
+
+### Nullable types
+
+```ts
+function greet(name: string) {
+  console.log(name.toUpperCase());
+}
+
+// Compile error: 'null' is not assignable to 'string'
+// Although we can turn off this check by setting 'strictNullChecks' = false
+// we should keep it on as default.
+greet(null);
+
+// When null is really desirable, we can use type union. E.g.
+function greet(name: string | null | undefined) {
+  if (name) {
+    console.log(name.toUpperCase());
+  } else {
+    // e.g. null, undefined
+    console.log('Hola!');
+  }
+}
+
+greet(null); // It works
+greet(undefined); // It works too
+```
