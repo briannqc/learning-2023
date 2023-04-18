@@ -164,3 +164,18 @@ let numbers: number[] = []
 numbers[0] = 1;  // OK
 numbers[1] = 'Two'; // Compile error
 ```
+
+### Tuples - Fixed size Arrays
+
+```ts
+// Behind the cover, tuples are just regular JS arrays
+// This tuple is compiled to: let user = [1, 'Brian'];
+let user: [number, string] = [0, 'Brian'];
+```
+
+Best practice: Limit the size of tuples to 2, use them as a short-hand for, e.g. pairs.
+
+```ts
+let user: [number, string] = [0, 'Brian']; // GOOD
+let user: [number, string, string, string] = [0, 'Brian', 'Singapore', 'Vietnamese']; // NOT GOOD
+```
