@@ -3,13 +3,13 @@ import Container from 'react-bootstrap/Container';
 
 import './App.css'
 import Heading from './Heading';
-import List from './List';
+import Playlist from './playlist/Playlist';
 
 function App() {
   return (
     <Container>
       <Heading />
-      <List />
+      <Playlist />
     </Container>
   )
 }
