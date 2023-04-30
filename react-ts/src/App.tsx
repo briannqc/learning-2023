@@ -8,12 +8,16 @@ import Image from 'react-bootstrap/Image';
 function App() {
   const author = "Brian NQC"
   const currentYear = new Date().getFullYear()
+  const inlineStyleWorksButNotCommonlyUsed = {
+    border: "1px solid",
+    color: "darkseagreen"
+  }
 
   return (
     <Container>
       <h1 contentEditable="true" spellCheck="true">Music Player</h1>
       <p>Created by {author}</p>
-      <p>Copyright {currentYear}</p>
+      <p style={inlineStyleWorksButNotCommonlyUsed}>Copyright {currentYear}</p>
       <Row>
         <Col lg={3} sm={4} xs={6}>
           <Image className="img-thumbnail thumbnail" src="https://picsum.photos/300" />
