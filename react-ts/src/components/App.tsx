@@ -3,13 +3,18 @@ import Container from 'react-bootstrap/Container';
 
 import './App.css'
 import Heading from './Heading';
-import Playlist from './playlist/Playlist';
+import NowPlayingList from './youtube/NowPlayingList';
+import Listening from './listening/Listening';
+
+
+type Source = "YouTube" | "Microphone"
 
 function App() {
+  let source: Source = "YouTube"
   return (
     <Container>
       <Heading />
-      <Playlist />
+      {source === "YouTube" ? <NowPlayingList /> : <Listening />}
     </Container>
   )
 }

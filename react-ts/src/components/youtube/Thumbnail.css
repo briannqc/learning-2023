@@ -1,0 +1,6 @@
+.thumbnail {
+  object-fit: cover;
+  aspect-ratio: 1;
+  height: 72px;
+  width: 96px;
+}
