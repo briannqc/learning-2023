@@ -12,3 +12,13 @@ export const POST = async (request: Request) => {
     return new Response("Failed to create a new prompt", { status: 500 });
   }
 };
+
+export const GET = async () => {
+  try {
+    await connectToDB();
+    const prompts = await Prompt.find({}).populate("creator");
+    return new Response(JSON.stringify(prompts), { status: 200 });
+  } catch (err: any) {
+    return new Response("Failed to fetch all prompts", { status: 500 });
+  }
+};

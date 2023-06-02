@@ -38,7 +38,8 @@ const handler = NextAuth({
           await User.create({
             email: profile.email,
             username: profile.name.replace(" ", "").toLowerCase(),
-            image: profile.image,
+            // For Google provider, image is in picture field
+            image: profile.image ?? (profile as any).picture,
           });
         }
         return true;

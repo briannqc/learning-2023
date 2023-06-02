@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { FormEvent } from "react";
 
 export type Prompt = {
-  creator: string;
+  userId: string;
   prompt: string;
   tag: string;
 };
