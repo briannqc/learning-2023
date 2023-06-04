@@ -11,17 +11,17 @@ p {
 	padding: 0;
 }
 
-/* Specificity: Override .box class selector */
+/* Specificity: Id selector overrides class selector .box */
 #outer-box {
 	background-color: purple;
 }
 
-/* Position: Override .box */
+/* Position: Class declared later overrides class declared above .box */
 .inner-box {
 	background-color: red;
 }
 
-/* No conflict, just apply */
+/* Specificity: Class selector overrides element selector */
 .white-text {
 	color: white;
 }
