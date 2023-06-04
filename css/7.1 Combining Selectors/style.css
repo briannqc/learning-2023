@@ -1,1 +1,27 @@
 /* Write your code here: */
+
+/* Group: Apply to both selectors */
+h1,
+h2 {
+	color: blueviolet;
+}
+
+/* Child: Apply to direct child of the left */
+.box > p {
+	color: firebrick;
+}
+
+/* Decendent: Apply to a decendent, direct or indirect, of the left */
+.box li {
+	color: blue;
+}
+
+/* Chaining: All where ALL the selectors are true */
+li.done {
+	color: green;
+}
+
+/* Combining combiners: All decendent of <ul> which is a <p> AND has class .done */
+ul p.done {
+	font-size: 0.5rem;
+}
