@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mondrian Project</title>
-  <style>
-    /* 
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mondrian Project</title>
+		<style>
+			/* 
     Write your CSS here 
     Gap Colour: #000
     White: #F0F1EC
@@ -19,11 +18,75 @@
     HINT: Remember you can't change the properties of grid lines.
     But grid lines are transparent!
     */
-  </style>
-</head>
+			.container {
+				display: grid;
+				width: 748px;
+				height: 748px;
+				gap: 9px;
+				grid-template-columns: 320px 198px 153px 50px;
+				grid-template-rows: 414px 130px 155px 20px;
+				background-color: black;
+				border: 1px solid;
+				padding: 0;
+			}
 
-<body>
-  <!-- Write your HTML here -->
-</body>
+			.item-1-1 {
+				background-color: red;
+			}
 
+			.item-1-2 {
+				background-color: azure;
+				grid-column: span 3;
+			}
+
+			.item-2-1 {
+				background-color: azure;
+				grid-row: span 2;
+			}
+
+			.item-2-2 {
+				background-color: azure;
+				grid-row: span 2;
+				grid-column: span 2;
+			}
+
+			.item-2-3 {
+				background-color: blue;
+				border-width: 0 0 10px 0;
+				border-style: solid;
+			}
+
+			.item-3-1 {
+				background-color: azure;
+				grid-row: span 2;
+			}
+
+			.item-4-1 {
+				background-color: azure;
+			}
+
+			.item-4-2 {
+				background-color: yellow;
+			}
+
+			.item-4-3 {
+				background-color: darkslateblue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- Write your HTML here -->
+		<div class="container">
+			<div class="item-1-1"></div>
+			<div class="item-1-2"></div>
+			<div class="item-2-1"></div>
+			<div class="item-2-2"></div>
+			<div class="item-2-3"></div>
+			<div class="item-3-1"></div>
+			<div class="item-4-1"></div>
+			<div class="item-4-2"></div>
+			<div class="item-4-3"></div>
+		</div>
+	</body>
 </html>
