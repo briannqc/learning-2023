@@ -1,3 +1,2 @@
 # Provider executable binaries
 .terraform/
-.terraform.lock.hcl
