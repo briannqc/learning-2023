@@ -1,0 +1,5 @@
+tomcatPassword: yLiWA34ryq
+service:
+  type: NodePort
+  notePorts:
+    http: 30007
