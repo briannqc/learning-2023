@@ -27,5 +27,17 @@ Then:
 
 ```
 ❯ helm dependency update webserver
-❯ helm install webserver webserver
+```
+
+3. To package
+
+```
+❯ helm package webserver
+Successfully packaged chart and saved it to: Assignment_04/webserver-0.1.0.tgz
+```
+
+4. Install chart
+
+```
+❯ helm install webserver webserver-0.1.0.tgz
 ```
