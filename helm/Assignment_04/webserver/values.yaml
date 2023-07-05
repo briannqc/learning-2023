@@ -80,3 +80,9 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+tomcat:
+  service:
+    type: NodePort
+    nodePorts:
+      http: 30007

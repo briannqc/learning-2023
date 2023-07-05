@@ -1,0 +1,6 @@
+dependencies:
+- name: tomcat
+  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 10.9.3
+digest: sha256:cfed96d0ab718c180fe6d3c67c2ff703e08536d4cb36c8073c34296268de885a
+generated: "2023-07-05T19:14:39.316516+08:00"
